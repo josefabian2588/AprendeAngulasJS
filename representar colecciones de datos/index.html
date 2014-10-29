@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="acccion">
+<head>
+    
+    <meta charset="utf-8">
+    <title> metodo angular JS</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    </head>
+    
+    <body>
+        
+        <div ng-controller="controlador1">
+        
+            <h1>nombres</h1>
+            
+            
+            <ul>
+            
+            <li data-ng-repeat="nombreIndividual in nombresSimples">
+                
+                {{ nombreIndividual }}
+                
+                </li>
+                
+            
+            </ul>
+        
+        
+             <h1>heroes</h1>
+            
+            <ul>
+            
+            <li data-ng-repeat="heroe in heroes">
+                
+                {{ heroe.nombre }}  {{ heroe.apellido }}
+                
+                </li>
+                
+            
+            </ul>
+        
+        
+            
+            
+        </div>
+        
+        
+        
+    <script>
+        
+        var miAaplicacion = angular.module('acccion',[])
+        
+        miAaplicacion.controller ('controlador1', ['$scope',function($scope){
+                                                  
+        $scope.nombresSimples=["alois","Gardenzio","Carlos"];
+       
+        $scope.heroes =[
+        
+            {nombre:"Arnold",apellido:"scharzz"},
+             {nombre:"Steve",apellido:"Razz"},
+            {nombre:"David",apellido:"Maclin"}
+        
+        ]
+            
+                                                   
+        }])
+        
+        
+        
+        
+        
+        </script>    
+    
+  
+    
+    </body>
+    
+    
+    
+    
+    
+</html>
